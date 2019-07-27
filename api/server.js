@@ -8,8 +8,8 @@ require('dotenv').config()
 // IMPORT MIDDLEWARE 
 
     // const helmet = require('helmet')
-    // const logger = require('morgan')
-    // const cors = require('cors')
+    const logger = require('morgan')
+    const cors = require('cors')
     
 // IMPORT ROUTES
     const routes = require('./routes/index.js')
@@ -18,7 +18,7 @@ require('dotenv').config()
     server.use(
         express.json(),
         // helmet(),
-        // cors()
+        cors()
     )
 
 // USE ROUTES
