@@ -66,4 +66,13 @@ Accepted Shape of Front End API call:
 }
 ```
 
+# Versions
 
+## 0.0.1 
+    0.0.1 = {
+    - 'live heroku BE: 
+        1. users table 
+    - available routes 
+        1. /login
+        2. /register
+    }
