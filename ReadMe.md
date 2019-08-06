@@ -66,6 +66,8 @@ Accepted Shape of Front End API call:
 }
 ```
 
+### Register New Location
+
 # Versions
 
 ## 0.0.1 
