@@ -8,8 +8,10 @@ exports.up = function(knex) {
         tbl.string('lastName')
         tbl.string('userName').unique()
         tbl.string('pw').notNullable()
-        tbl.integer('adminCat').notNullable().defaultTo(1)
-        tbl.integer('jobCat').notNullable().defaultTo(1)
+        tbl.string('userType').notNullable()
+        tbl.integer('adminCat').notNullable().defaultTo(0)
+        
+        // tbl.integer('jobCat').notNullable().defaultTo(1)
     })
 };
 

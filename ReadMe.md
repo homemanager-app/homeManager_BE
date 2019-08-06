@@ -1,5 +1,3 @@
--- INITIAL COMMIT TO BACK END BRANCH
-
 # homeManager
 Welcome to Home Manager
 
@@ -14,14 +12,43 @@ Welcome to Home Manager
     https://home-manager-backend.herokuapp.com/
 
 ## UserProfiles:
-    StakeholderTree
-    - Property Owner (everything)(mainAdmin)
-    - Landlord (bills)(admin)
+    - User Types
+        1. Property Owner
+        2. Landlord
+        3. Third Party Maintenance
+        4. tenant
 
-    Beneficiaries
-    - Property Manager (maintenance)
-    - Tenant(s)
-    - Service (third party repair)
+    - User Admin Category # & Abilities
+        0 = n.a.
+        1 = Property Owner
+            - Create / Edit / Delete --> Landlord Users
+
+            * Overlap w/ Landlord * 
+                - Create / Edit / Delete --> Maintenance Request
+                - Create / Edit / Delete --> Third Marty Maintenance Users
+                - Create / Edit / Delete --> Maintenance Timesheets
+                - Create / Edit / Delete --> Maintenance Receipts
+                
+                - Create / Edit / Delete --> Tenant Users
+                - Create / Edit / Delete --> Tenant Bills
+            
+        2 = Landlord
+            - Create / Edit --> Maintenance Request
+            - Create / Edit --> Third Marty Maintenance Users
+            - Create / Edit --> Maintenance Timesheets
+            - Create / Edit --> Maintenance Receipts
+            
+            - Create / Edit --> Tenant Users
+            - Create / Edit --> Tenant Bills
+
+        3 = Third Party Maintenance
+            - Create / Edit --> Timesheets
+            - Create / Edit --> Maintenance Receipts
+
+        4 = Tenant 
+            - Create / Edit --> Maintenance Request
+            - Pay Bills
+
 
 ## Routes
 
@@ -41,12 +68,20 @@ Accepted Shape of Front End API call:
     firstName: "STRING",
     userName: "STRING",
     pw: "STRING",
-    adminCat: 1,
-    jobCat: 1
+    adminCat: INTEGER** 
 }
+** NOT requires -> Default = 0 
 ```
 
 ### Login
+
+```
+Accepted Shape of Front End API call:
+{
+    userName: "STRING",
+    pw: "STRING",
+}
+```
 
 Functionality:
 - pw verification
@@ -57,16 +92,6 @@ Functionality:
         userName: 'STRING'
     }
     ```
-
-```
-Accepted Shape of Front End API call:
-{
-    userName: "STRING",
-    pw: "STRING",
-}
-```
-
-### Register New Location
 
 # Versions
 
