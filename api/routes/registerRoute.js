@@ -26,9 +26,12 @@ const express = require('express')
             "lastName": "STRING",
             "userName": "STRING",
             "pw": "STRING",
-            "adminCat": INTEGER,
-            "jobCat": INTEGER,
+            "email": "STRING",
+            "phone": TEL
+            "adminCat": INTEGER, *
         }
+
+        * Not required 
     */ 
     router.post('/', pwHash, async(req,res) => {
         console.log('registerRouter post/')

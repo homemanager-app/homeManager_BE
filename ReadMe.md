@@ -16,7 +16,7 @@ Welcome to Home Manager
         1. Property Owner
         2. Landlord
         3. Third Party Maintenance
-        4. tenant
+        4. Tenant
 
     - User Admin Category # & Abilities
         0 = n.a.

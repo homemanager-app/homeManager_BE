@@ -6,10 +6,24 @@ exports.up = function(knex) {
 
         tbl.string('firstName')
         tbl.string('lastName')
-        tbl.string('userName').unique()
-        tbl.string('pw').notNullable()
-        tbl.string('userType').notNullable()
-        tbl.integer('adminCat').notNullable().defaultTo(0)
+        tbl.string('userName')
+            .unique()
+        tbl.string('pw')
+            .notNullable()
+        tbl.string('email')
+            .unique()
+            .notNullable()
+        tbl.string('phone')
+            .unique()
+            .notNullable()
+
+
+        tbl.string('userType')
+            .notNullable()
+            .defaultTo('Property_Owner')
+        tbl.integer('adminCat')
+            .notNullable()
+            .defaultTo(0)
         
         // tbl.integer('jobCat').notNullable().defaultTo(1)
     })
