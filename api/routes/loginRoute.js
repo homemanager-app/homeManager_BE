@@ -52,7 +52,8 @@ const secrets = require('../../secrets.js')
                     const token = jwt.sign(
                         {
                             userID: user.id,
-                            userName: user.userName
+                            userName: user.userName,
+                            adminCat: user.adminCat
                         },
                         secrets.jwtSecret,
                         {

@@ -37,6 +37,10 @@ const express = require('express')
         console.log('registerRouter post/')
         console.log('newUser post:pwHash',req.body)
 
+        const objectToPass = req.body
+        objectToPass.adminCat = 1
+        console.log('objectToPass', objectToPass)
+
         DB_KNEX('users')
             .insert(req.body)
             .then( results => {
