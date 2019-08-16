@@ -4,9 +4,15 @@ Welcome to Home Manager
 ## Table of Contents
 - [KeyFeatures](#KeyFeatures)
 
+- [Naming](#Naming)
 - [Heroku](#Heroku)
 - [User Profiles](#UserProfiles)
 - [Routes](#Routes)
+
+## Naming
+    - Branches 
+        - feat_featureName
+        - fix_fixName
 
 ## Heroku
     https://home-manager-backend.herokuapp.com/
