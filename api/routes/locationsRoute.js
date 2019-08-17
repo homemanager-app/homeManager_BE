@@ -67,7 +67,21 @@ const express = require('express')
     })
 
 // - PUT - //
+    router.put('/:id', async(req,res) => {
+        console.log('locationRouter put/')
+        const { id } = req.params
 
+        DB_KNEX('locations')
+            .where('id', id)
+            .update(req.body)
+            .then( updatedLocation => {
+                console.log('updatedLocation', updatedLocation )
+                res.status(200).json( updatedLocation )
+            })
+            .catch( err => {
+                res.status(500).json( { error: 'Unable to Update Location'} )
+            })
+    })
 
 
 // - DEL - //
