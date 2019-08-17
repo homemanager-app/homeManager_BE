@@ -41,12 +41,12 @@ const express = require('express')
 // - POST - //
     /* Accepted SHape
         {
-            "Street_Name": "String",
             "Street_Number": Integer
+            "Street_Name": "String",
             "City": "String",
             "State": "String",
             "Zip_Code": "String",
-            "Admin": Integer
+            "AdminID": Integer
         } 
     */
 
@@ -67,7 +67,26 @@ const express = require('express')
     })
 
 // - PUT - //
+
+
+
 // - DEL - //
+    router.delete('/:id', async(req,res) => {
+        console.log('locationRouter delete/')
+        
+        const { id } = req.params;
+        DB_KNEX('locations')
+            .where('id', id)
+            .del()
+            .then( result => {
+                console.log('result', result )
+                res.status(200).json( result )
+            })
+            .catch( err => {
+                res.status(500).json( { error: 'Unable to Delete Location'} )
+            })
+    })
+
 
 // EXPORTS
     module.exports = router
