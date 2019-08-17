@@ -11,10 +11,7 @@ const express = require('express')
 
 // - GET - //
     router.get('/', async(req, res) => {
-        // -- TEST -- //
             console.log('locationsRouter get/')
-            // res.status(200).json({ message: 'GET/ --> in locationsRouter'})
-        // -- //
             DB_KNEX('locations')
                 .then( ALL_locations => {
                     console.log('ALL_locations', ALL_locations)
@@ -28,7 +25,16 @@ const express = require('express')
 
     router.get('/:id', async(req,res) => {
         console.log('locationsRouter get/')
-        res.status(200).json({ message: 'GET/:id --> in locationsRouter'})
+        const { id } = req.params;
+
+        DB_KNEX('locations').where('adminID', id)
+            .then( ID_locations => {
+                console.log('ID_locations', ID_locations )
+                res.status(200).json( ID_locations )
+            })
+            .catch( err => {
+                res.status(500).json( {error: 'Unable to Get Locations'} )
+            })
     })
 
 
