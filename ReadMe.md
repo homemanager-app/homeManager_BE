@@ -4,10 +4,17 @@ Welcome to Home Manager
 ## Table of Contents
 - [KeyFeatures](#KeyFeatures)
 
+- [API Docs](#API_docs)
 - [Naming](#Naming)
 - [Heroku](#Heroku)
 - [User Profiles](#UserProfiles)
 - [Routes](#Routes)
+
+## API_docs
+[SwaggerHub API Documentation](https://app.swaggerhub.com/apis-docs/Mr.T/Home_Manager/0.0.0)
+
+    ~ SwaggerHub Link ~
+    https://app.swaggerhub.com/apis-docs/Mr.T/Home_Manager/0.0.0
 
 ## Naming
     - Branches 

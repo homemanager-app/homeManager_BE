@@ -63,7 +63,7 @@ const secrets = require('../../secrets.js')
                     console.log('token', token)
 
                     res.status(200).json({
-                        message: 'welcome to the homeManager',
+                        message: 'Welcome to the Home Manager',
                         token
                     })
                 } else {
@@ -72,7 +72,7 @@ const secrets = require('../../secrets.js')
 
             })
             .catch( err => {
-            
+                res.status(500).json( {error: 'Unable to Login'})
             })
     })
 // - PUT - //
