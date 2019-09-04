@@ -11,7 +11,15 @@ exports.seed = function(knex) {
                         State: 'MA',
                         Zip_Code: '02038',
                         adminID: 1
+                    },
+                    {
+                        Street_Number: 371,
+                        Street_Name: "Circuit Ave",
+                        City: 'Pocasset',
+                        State: 'MA',
+                        Zip_Code: '00000',
+                        adminID: 2
                     }
                 ]);
             });
-    };
+};

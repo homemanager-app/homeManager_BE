@@ -14,10 +14,6 @@ exports.up = function(knex) {
             .onUpdate("cascade").onDelete("cascade");
 
         tbl
-            .string('store')
-            .notNullable()
-
-        tbl
             .string('quantity')
             .notNullable()
 

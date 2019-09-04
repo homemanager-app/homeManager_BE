@@ -1,34 +1,42 @@
 
 exports.up = function(knex) {
-    return knex.schema.createTable('users', tbl => {
+    return knex.schema.createTable('USERS', tbl => {
         // ID 
         tbl.increments('id')
 
-        tbl.string('firstName')
-        tbl.string('lastName')
-        tbl.string('userName')
-            .unique()
-        tbl.string('pw')
+        tbl
+            .string('firstName')
             .notNullable()
-        tbl.string('email')
+        tbl
+            .string('lastName')
+            .notNullable()
+        tbl
+            .unique()
+            .string('userName')
+            .notNullable()
+        tbl
+            .string('pw')
+            .notNullable()
+        tbl
+            .string('email')
             .unique()
             .notNullable()
+
         tbl.string('phone')
             .unique()
             .notNullable()
 
 
         tbl.string('userType')
-            .notNullable()
             .defaultTo('Property_Owner')
-        tbl.integer('adminCat')
             .notNullable()
+
+        tbl.integer('adminCat')
             .defaultTo(0)
-        
-        // tbl.integer('jobCat').notNullable().defaultTo(1)
+            .notNullable()
     })
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTableIfExists('users')
+    return knex.schema.dropTableIfExists('USERS')
 };

@@ -4,18 +4,26 @@ exports.up = function(knex) {
         tbl.increments('id')
         
         tbl
-            .string('submittedBy')
-            .notNullable()
+            .integer('locationID').unsigned()
+            .references("id").inTable("LOCATIONS")
+            .onUpdate("cascade").onDelete("cascade")
+
+        tbl
+            .integer('submittedBy').unsigned()
+            .references("id").inTable("USERS")
+            .onUpdate("cascade").onDelete("cascade")
+            
+        tbl
+            .integer('assignedTo').unsigned()
+            .references("id").inTable("USERS")
+            .onUpdate("cascade").onDelete("cascade")
         tbl
             .string('severity')
             .notNullable()
         tbl
             .string('description')
             .notNullable()
-        tbl
-            .integer('assignedVendor').unsigned()
-            .references("id").inTable("VENDORS")
-            .onUpdate("cascade").onDelete("cascade")
+
         tbl
             .timestamps(true, true)
     })

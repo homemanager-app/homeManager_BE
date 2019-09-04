@@ -8,7 +8,7 @@ exports.up = function(knex) {
             .notNullable()
 
         tbl
-            .string('phoneNumber')
+            .string('phone')
             .notNullable()
 
         tbl
