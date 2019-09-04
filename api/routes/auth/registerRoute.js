@@ -3,13 +3,13 @@
 const express = require('express')
 
 // KNEX DB
-    const DB_KNEX = require('../../data/dbConfig.js')
+    const DB_KNEX = require('../../../data/dbConfig.js')
 
 // ROUTER
     const router = express.Router()
     
 // MIDDLEWARE 
-    const pwHash = require('../../middleware/pwHash.js')
+    const pwHash = require('../../../middleware/pwHash.js')
 
 // - GET - //
     router.get('/', async(req, res) => {

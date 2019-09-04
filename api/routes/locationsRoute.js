@@ -1,5 +1,5 @@
 // EXPRESS
-const express = require('express')
+    const express = require('express')
 
 // KNEX DB
     const DB_KNEX = require('../../data/dbConfig.js')
@@ -10,6 +10,7 @@ const express = require('express')
 // MIDDLEWARE
 
 // - GET - //
+    // 1 //
     router.get('/', async(req, res) => {
             console.log('locationsRouter get/')
             DB_KNEX('locations')
@@ -23,6 +24,7 @@ const express = require('express')
         
     })
 
+    // 2 //
     router.get('/:id', async(req,res) => {
         console.log('locationsRouter get/')
         const { id } = req.params;
@@ -46,14 +48,19 @@ const express = require('express')
             "City": "String",
             "State": "String",
             "Zip_Code": "String",
-            "AdminID": Integer
         } 
     */
 
-    router.post('/', async(req,res) => {
+    router.post('/:id', async(req,res) => {
         console.log('locationRouter post/')
+        const { id } = req.params
 
         console.log('req.body', req.body)
+
+        let bodyToPass = req.body
+        bodyToPass.adminID = id
+
+        console.log('bodyToPass',bodyToPass)
 
         DB_KNEX('locations')
             .insert(req.body)
@@ -100,7 +107,6 @@ const express = require('express')
                 res.status(500).json( { error: 'Unable to Delete Location'} )
             })
     })
-
 
 // EXPORTS
     module.exports = router
